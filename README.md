@@ -1,66 +1,411 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌸 Frontend SI CUTI — Panduan Awal Pembuatan Project Laravel 💻🎨
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Haiii! 👋 Selamat datang di dokumentasi Frontend **SI CUTI** ✨  
+Dokumentasi ini dibuat untuk membantu membangun frontend Laravel dari awal dan menghubungkannya dengan backend. Yuk kita mulai! 💪
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Langkah 1: Clone Repository Backend 🌐
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sebelum membuat frontend, kita perlu jalankan backend dulu.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+> 🔗 **Link Repository Backend**: [https://github.com/Alledanaralle/PBF](https://github.com/Alledanaralle/PBF)
 
-## Learning Laravel
+### ✅ Cara Clone:
+```masuk ke terminal Laragon
+git clone https://github.com/Alledanaralle/PBF.git
+cd PBF
+composer install
+php spark serve
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📡Langkah 2: Cek Endpoint USER lewat Laravel & Postman👤
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Setelah backend Laravel berjalan, kamu bisa cek apakah endpoint API-nya sudah aktif menggunakan Postman! 🛠️  
+Berikut ini daftar lengkap endpoint yang bisa kamu pakai untuk entity USER:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### 🔗 Daftar Endpoint USER
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Method | Endpoint                            | Keterangan                  |
+|--------|-------------------------------------|------------------------------|
+| GET    | `http://localhost:8080/user`        | Ambil semua user             |
+| GET    | `http://localhost:8080/user/{id}`   | Ambil user berdasarkan ID    |
+| POST   | `http://localhost:8080/user`        | Tambah user baru             |
+| PUT    | `http://localhost:8080/user/{id}`   | Edit data user               |
+| DELETE | `http://localhost:8080/user/{id}`   | Hapus user                   |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🧪 Cara Tes Endpoint USER di Postman 🧡
 
-## Contributing
+1. Buka aplikasi **Postman**.
+2. Pilih method sesuai kebutuhan: `GET`, `POST`, `PUT`, atau `DELETE`.
+3. Masukkan URL seperti contoh berikut:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   - **GET semua user:**  
+     ```
+     http://localhost:8080/user
+     ```
 
-## Code of Conduct
+   - **GET user berdasarkan ID:**  
+     ```
+     http://localhost:8080/user/1
+     ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   - **POST tambah user:**  
+     ```
+     http://localhost:8080/user
+     ```
 
-## Security Vulnerabilities
+   - **PUT edit user:**  
+     ```
+     http://localhost:8080/user/1
+     ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   - **DELETE hapus user:**  
+     ```
+     http://localhost:8080/user/1
+     ```
 
-## License
+4. Untuk method **POST** dan **PUT**:
+   - Klik tab **Body**
+   - Pilih **raw**
+   - Pilih format **JSON**
+   - Masukkan data contoh seperti ini:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```json
+{
+  "name": "Amanda",
+  "email": "amannda@example.com",
+  "password": "password123"
+}
+```
+
+### ▶️ Klik tombol Send di Postman
+
+Setelah kamu mengisi method, URL, dan body (jika perlu), klik tombol **Send** ▶️ di Postman.
+
+Lihat respon dari server di bagian bawah.  
+Kalau berhasil, akan muncul data user atau pesan sukses seperti:
+
+```arduino
+"Data berhasil disimpan"
+```
+
+## ⚙️ Langkah 3: Membuat Project Laravel via Quick App di Laragon 🐣
+
+Kamu bisa bikin project Laravel super cepat hanya dalam hitungan detik pakai fitur **Quick App** di Laragon! ⚡  
+Ikuti langkah-langkah di bawah ini~ 🧁
+
+---
+
+### 🐾 Step by Step Bikin Project Laravel:
+
+1. **Buka aplikasi Laragon** 💻  
+   Pastikan Laragon kamu sudah berjalan (warna tombol hijau "Started").
+
+2. Klik menu **Menu ➡️ Quick App ➡️ Laravel**  
+   ![Quick App Laravel](https://i.imgur.com/NoY3yUG.png)
+
+3. Masukkan **nama project** Laravel kamu, misalnya: FE-SiPCuti
+
+4. Klik **OK** ✅  
+Tunggu beberapa detik... dan taraaaa~ 🎉 Laravel kamu langsung dibuat otomatis!
+
+---
+
+### 📁 Struktur Folder Project
+
+Setelah selesai, kamu bisa lihat folder project kamu di:  
+C:\laragon\www\FE-SiPCuti
+
+## 🔥 Langkah 4: Menyalakan Server Laravel & Menambahkan View, Controller, dan Routes 🧁
+
+Setelah kamu punya project Laravel `FE-SiPCuti`, sekarang kita mulai ngoding dan menyalakan servernya yuk! 💻✨
+
+---
+
+### 🚀 Menyalakan Server Laravel
+
+1. **Buka CMD atau Terminal**
+2. Masuk ke folder project Laravel kamu:
+   ```bash
+   cd C:\laragon\www\FE-SiPCuti
+3. Jalankan Laravel server:
+
+```bash
+php artisan serve
+```
+4. Setelah menjalankan perintah tersebut, akan muncul output seperti ini:
+Starting Laravel development server: http://127.0.0.1:8000
+
+5. Buka browser kamu dan akses:
+http://127.0.0.1:8000
+
+### 🚀 Menambahkan View, Controllers dan Routes 
+
+**1. Membuat File View `user.blade.php`**
+
+Buat file view di:
+
+resources/views/user.blade.php
+
+Isi file `user.blade.php` dengan kode berikut:
+
+```blade
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#FFFDEB] flex">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-[#990000] p-5 text-white h-screen border-r-4 border-[#4d0000]">
+        <h1 class="text-xl font-bold">SI CUTI</h1>
+        <nav class="mt-5 space-y-2">
+            <a href="/dashboard" class="block py-2 px-4 hover:bg-red-500 rounded">🏠 Dashboard</a>
+            <a href="/mahasiswa" class="block py-2 px-4 hover:bg-red-500 rounded">🎓 Mahasiswa</a>
+            <a href="/kajur" class="block py-2 px-4 hover:bg-red-500 rounded">👨‍💼 Kajur</a>
+            <a href="/cuti" class="block py-2 px-4 hover:bg-red-500 rounded">📝 Cuti</a>
+            <a href="/user" class="block py-2 px-4 bg-red-500 rounded font-bold">👤 User</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1">
+        <!-- Navbar -->
+        <div class="bg-[#4d0000] text-white p-4 flex justify-between items-center shadow-md">
+            <h2 class="text-lg font-bold">Data User</h2>
+            <span>Manajemen Data User</span>
+        </div>
+
+        <!-- Content -->
+        <div class="p-8">
+            <a href="/user/create" class="bg-[#800000] text-white py-2 px-4 rounded text-sm font-semibold inline-block">+ Tambah User</a>
+
+            <div class="overflow-x-auto mt-6">
+                <table class="min-w-full bg-white border border-gray-200 text-sm text-center">
+                    <thead>
+                        <tr class="bg-[#990000] text-white">
+                            <th class="py-2 px-4 border">ID User</th>
+                            <th class="py-2 px-4 border">Username</th>
+                            <th class="py-2 px-4 border">Password</th>
+                            <th class="py-2 px-4 border">Level</th>
+                            <th class="py-2 px-4 border">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($users as $u)
+                        <tr class="hover:bg-gray-100">
+                            <td class="py-2 px-4 border">{{ $u["id_user"] }}</td>
+                            <td class="py-2 px-4 border">{{ $u["username"] }}</td>
+                            <td class="py-2 px-4 border">{{ $u["password"] }}</td>
+                            <td class="py-2 px-4 border">{{ $u["level"] }}</td>
+                            <td class="py-2 px-4 border">
+                                <div class="flex justify-center items-center gap-2">
+                                    <a href="/user/{{ $u['id_user'] }}/edit" class="bg-orange-500 text-white px-3 py-1 rounded text-xs hover:bg-orange-600 transition">Edit</a>
+                                    <form action="/user/{{ $u['id_user'] }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded text-xs hover:bg-red-700 transition">Hapus</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="5" class="py-4 px-4 text-center text-gray-500">Tidak ada data user</td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
+**2. Membuat Controller dengan query**
+   Jalankan perintah di terminal untuk membuat controller:
+   ```
+   php artisan make:controller UserController
+   ```
+**3. Isikan tiap fungsi pada UserController dengan menarik API Backend supaya bisa menampilkan data dan melakukan CRUD. Berikut adalah codenya :**
+   ```
+   <?php
+
+    namespace App\Http\Controllers;
+    
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Http;
+    
+    class UserController extends Controller
+    {
+    /**
+     * TAMPILKAN SEMUA DATA USER
+     *
+     * Mengambil data semua user dari API backend
+     * dan menampilkannya di view 'user.blade.php'
+     */
+    public function index()
+    {
+        // Mengirim HTTP GET request ke endpoint API user
+        $response = Http::get('http://localhost:8080/user');
+        
+        // Mengubah response JSON menjadi array PHP
+        $users = $response->json();
+
+        // Mengirim data user ke view
+        return view('user', compact('users'));
+    }
+
+    /**
+     * TAMPILKAN FORM TAMBAH USER
+     *
+     * Menampilkan form untuk menambahkan user baru
+     */
+    public function create()
+    {
+        return view('create_user');
+    }
+
+    /**
+     * SIMPAN DATA BARU KE API
+     *
+     * Mengirim data form tambah user ke API backend menggunakan HTTP POST
+     */
+    public function store(Request $request)
+    {
+        // Mengirim request POST ke API dengan data dari form
+        $response = Http::asForm()->post('http://localhost:8080/user', [
+            'username' => $request->username,
+            'password' => $request->password,
+            'level' => $request->level,
+        ]);
+
+        // Cek apakah berhasil atau gagal
+        if ($response->successful()) {
+            return redirect('/user')->with('success', 'Data user berhasil ditambahkan.');
+        } else {
+            return back()->with('error', 'Gagal menambah data user.');
+        }
+    }
+
+    /**
+     * TAMPILKAN FORM EDIT USER
+     *
+     * Mengambil data user berdasarkan ID dan menampilkannya dalam form edit
+     */
+    public function edit($id)
+    {
+        // Ambil semua data user dari API
+        $response = Http::get("http://localhost:8080/user");
+        $users = $response->json();
+
+        // Cari user yang sesuai dengan ID
+        $user = collect($users)->firstWhere('id_user', $id);
+
+        // Jika user ditemukan, tampilkan form edit
+        if ($user) {
+            return view('edit_user', compact('user'));
+        } else {
+            // Jika tidak ditemukan, kembalikan ke halaman user dengan pesan error
+            return redirect('/user')->with('error', 'User tidak ditemukan.');
+        }
+    }
+
+    /**
+     * SIMPAN PERUBAHAN USER
+     *
+     * Mengirim data update user ke API backend menggunakan HTTP PUT
+     */
+    public function update(Request $request, $id)
+    {
+        // Data dasar yang akan dikirim
+        $data = [
+            'username' => $request->username,
+            'level' => $request->level,
+        ];
+
+        // Jika password diisi, tambahkan ke data
+        if ($request->filled('password')) {
+            $data['password'] = $request->password;
+        }
+
+        // Kirim request PUT ke API dengan data yang diperbarui
+        $response = Http::asForm()->put("http://localhost:8080/user/{$id}", $data);
+
+        // Cek apakah berhasil atau tidak
+        if ($response->successful()) {
+            return redirect('/user')->with('success', 'Data user berhasil diperbarui.');
+        } else {
+            return back()->with('error', 'Gagal memperbarui data user.');
+        }
+    }
+
+    /**
+     * HAPUS USER
+     *
+     * Menghapus user berdasarkan ID dengan mengirim HTTP DELETE ke API
+     */
+    public function destroy($id)
+    {
+        // Kirim request DELETE ke API
+        $response = Http::delete("http://localhost:8080/user/{$id}");
+
+        // Cek hasil response
+        if ($response->successful()) {
+            return redirect('/user')->with('success', 'Data user berhasil dihapus.');
+        } else {
+            return redirect('/user')->with('error', 'Gagal menghapus data user.');
+        }
+    }
+    }
+```
+
+**4. Buatkan Routes untuk user dengan code berikut :**
+```
+// User
+use App\Http\Controllers\UserController;
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class, 'create']);
+Route::post('/user', [UserController::class, 'store']);
+Route::get('/user/{id}/edit', [UserController::class, 'edit']);
+Route::put('/user/{id}', [UserController::class, 'update']);
+Route::delete('/user/{id}', [UserController::class, 'destroy']);
+```
+## **⚙️ Cara Menjalankan Aplikasi Laravel - Halaman User**
+Ikuti langkah-langkah di bawah ini untuk menjalankan aplikasi Laravel dan mengakses fitur User Management melalui browser:
+
+✅ 1. Pastikan Backend API Aktif
+Sebelum menjalankan frontend Laravel, pastikan backend API sudah berjalan di:
+```
+http://localhost:8080/user
+```
+
+🚀 2. Jalankan Laravel
+Buka terminal dan arahkan ke folder root project Laravel kamu, lalu jalankan perintah:
+```
+php artisan serve
+```
+Jika berhasil, terminal akan menampilkan:
+```
+Starting Laravel development server: http://127.0.0.1:8000
+```
+
+🌐 3. Akses di Browser
+Sekarang buka browser favoritmu dan masuk ke URL berikut:
+```
+http://127.0.0.1:8000/user
+```
